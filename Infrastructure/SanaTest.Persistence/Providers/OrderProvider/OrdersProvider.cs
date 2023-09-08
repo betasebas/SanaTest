@@ -61,7 +61,7 @@ namespace SanaTest.Persistence.Providers.OrderProvider
                     }
                     catch (Exception ex2)
                     {
-                        throw new Exception("Error with DB", ex2);
+                        throw new Exception("An error occurs registering the order. Try again later", ex2);
                     }
                 }
             }
@@ -126,7 +126,7 @@ namespace SanaTest.Persistence.Providers.OrderProvider
                     }
                     catch (Exception ex2)
                     {
-                        throw new Exception("Error with DB", ex2);
+                        throw new Exception("An error occurs registering the order. Try again later", ex2);
                     }
                 }
 
