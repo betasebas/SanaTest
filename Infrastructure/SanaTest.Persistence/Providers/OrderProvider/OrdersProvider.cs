@@ -77,8 +77,8 @@ namespace SanaTest.Persistence.Providers.OrderProvider
                     cmd.Parameters.Add("@id", System.Data.SqlDbType.UniqueIdentifier).Value = idOrderProduct;
                     cmd.Parameters.Add("@idorder", System.Data.SqlDbType.UniqueIdentifier).Value = idOrder;
                     cmd.Parameters.Add("@idproduct", System.Data.SqlDbType.UniqueIdentifier).Value = item.IdProduct;
-                    cmd.Parameters.Add("@subvalue", System.Data.SqlDbType.Date).Value = item.Subvalue;
-                    cmd.Parameters.Add("@quantity", System.Data.SqlDbType.Timestamp).Value = item.Quantity;
+                    cmd.Parameters.Add("@subvalue", System.Data.SqlDbType.Decimal).Value = item.Subvalue;
+                    cmd.Parameters.Add("@quantity", System.Data.SqlDbType.Int).Value = item.Quantity;
                     await cmd.ExecuteNonQueryAsync(); 
                 }
             }
