@@ -14,6 +14,19 @@ namespace SanaTest.Persistence.Caching
             _logger = logger;
             _cache = cache;
         }
+
+        public void DeleteCachingShoppinCart(string key)
+        {
+            _logger.LogInformation("Star delete products in cachig {key}", key);
+            try
+            {
+                _cache.Remove(key);
+            }catch(Exception ex)
+            {
+                 _logger.LogError($"Error in caching {ex.Message}");
+            }      
+        }
+
         public List<Product> GetDataProductsCachingasync(string key)
         {     
             List<Product> products = new List<Product>();

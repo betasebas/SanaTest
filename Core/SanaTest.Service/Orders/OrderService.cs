@@ -37,6 +37,7 @@ namespace SanaTest.Service.Orders
             (List<OrderProducts> orderProducts, decimal? valueTotal) = GetDataOrderProduct(productShoppings);
             Order order = GetDataOrder(valueTotal, orderRequest.IdCustomer);
             _ = await _ordersProvider.AddOrderAsync(order, orderProducts);
+            _cacheData.DeleteCachingShoppinCart(key);
             return new GenericResponse{ Code = 200, Message = "Created order" };
         }
 

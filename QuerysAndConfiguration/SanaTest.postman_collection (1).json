@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "4bef98d4-c057-4ada-bc73-86c9256a0648",
+		"name": "SanaTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "1065530"
+	},
+	"item": [
+		{
+			"name": "GetProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://localhost:5001/api/v1/Products/GetProducts"
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductsInCart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "customerid",
+						"value": "a755878a-4d27-11ee-9cca-b268bdcc0c33",
+						"type": "text"
+					}
+				],
+				"url": "https://localhost:5001/api/v1/ShoppingCart/GetProductsShoppingCart"
+			},
+			"response": []
+		},
+		{
+			"name": "AddProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Id\": \"ca8c25ae-4d1a-11ee-9cca-b268bdcc0c33\",\n    \"Code\": \"EOCS-352ES\",\n    \"Quantity\": 360,\n    \"CustomerId\": \"a755878a-4d27-11ee-9cca-b268bdcc0c33\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:5001/api/v1/shoppingCart/AddProduct"
+			},
+			"response": []
+		},
+		{
+			"name": "AddOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"IdCustomer\": \"a755878a-4d27-11ee-9cca-b268bdcc0c33\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:5001/api/v1/order/AddOrder"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Id\": \"ca8c25ae-4d1a-11ee-9cca-b268bdcc0c33\",\n    \"Code\": \"EOCS-352ES\",\n    \"CustomerId\": \"a755878a-4d27-11ee-9cca-b268bdcc0c33\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:5001/api/v1/shoppingCart/DeleteProduct"
+			},
+			"response": []
+		}
+	]
+}

@@ -9,9 +9,11 @@ namespace SanaTest.Persistence.Caching
 
         void SetDataProductsCachingasync(string key, List<Product> products);
 
-         List<ProductShopping> GetDataProductsShoppingCachingasync(string key);
+        List<ProductShopping> GetDataProductsShoppingCachingasync(string key);
 
         void SetDataProductsCachingasync(string key, List<ProductShopping> products);
+
+        void DeleteCachingShoppinCart(string key);
 
     }
 }
